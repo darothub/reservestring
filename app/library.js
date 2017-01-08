@@ -2,10 +2,11 @@
 
 var findMinMax = function(arr){
 	if (!Array.isArray(arr)){
-		return "invalid argument type"
+		return "This is not an Array"
   	}
+  	
   	for (var j = 0; j<arr.length; j++){
-  		if (arr[j].constructor === String){
+  		if (arr[j].constructor === String ){
   			return "invalid argument";
   		}
   	}

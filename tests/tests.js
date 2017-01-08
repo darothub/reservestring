@@ -35,10 +35,17 @@ describe('Min-Max Numbers in a List: ', function () {
     describe('falsy argument in a list', function () {
 
       it('should return "invalid" for ["string"]', function () {
-        expect(myApp.findMinMax(["string"])).toEqual("invalid argument");
+        expect(myApp.findMinMax(['string'])).toEqual('invalid argument');
       });
 
     });
-    
+    describe('literal argument in a list', function () {
+
+      it('should return This is not an array for 6', function () {
+        expect(myApp.findMinMax(6)).toEqual("This is not an Array");
+      });
+
+    });
+   
 
 });
