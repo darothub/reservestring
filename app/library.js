@@ -4,6 +4,9 @@ var findMinMax = function(arr){
 	if (!Array.isArray(arr)){
 		return "This is not an Array"
   	}
+  	if(arr === null){
+  		return "This is not an Array"
+  	}
   	
   	for (var j = 0; j<arr.length; j++){
   		if (arr[j].constructor === String ){

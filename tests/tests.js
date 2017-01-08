@@ -46,6 +46,12 @@ describe('Min-Max Numbers in a List: ', function () {
       });
 
     });
-   
+    describe('with no argument in a list', function () {
+
+      it('should return no argument for None', function () {
+        expect(myApp.findMinMax(null)).toEqual("This is not an Array");
+      });
+
+    });
 
 });
