@@ -1,38 +1,18 @@
 'use strict'
-
-var findMinMax = function(arr){
-	if (!Array.isArray(arr)){
-		return "This is not an Array"
-  	}
-  	if(arr === null){
-  		return "This is not an Array"
-  	}
-  	
-  	for (var j = 0; j<arr.length; j++){
-  		if (arr[j].constructor === String ){
-  			return "invalid argument";
-  		}
-  	}
-  	var Minmax = [];
-	var maxi = arr[0];
-	var mini = arr[0];
-  	for(var i=1; i<arr.length; i++){
-		if(arr[i] > maxi){
-			maxi = arr[i];
+function reverseString(str){
+	if(str === ""){
+		return null;
+	}
+	var reversal = [];
+	for (var i = 1; i<=str.length; i++){
+		reversal.push(str[str.length-i])
 		}
-		if(arr[i]<mini){
-			mini = arr[i]
+		if (reversal === str){
+			return true
 		}
-  	}
-  	
-  	Minmax.push(mini);
-  	Minmax.push(maxi);
-  	if (mini === maxi){
-  		return [mini];
-  	}
-  	return Minmax;
+		return reversal
 }
-  	 	
+
 module.exports = {
-	findMinMax : findMinMax
+	reverseString : reverseString
 };

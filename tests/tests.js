@@ -1,57 +1,36 @@
 'use strict';
-
-
 require('jasmine');
 // var assert = chai.assert;
 // var expect = chai.expect;
 // var should = chai.should();
 var myApp = require('../app/library.js');
 
-describe('Min-Max Numbers in a List: ', function () {
-
-  describe('Return the min and max number in the list in a new list follows `[min, max]`', function () {
-
-    it('should return [1,4] for [1, 2, 3 , 4]', function () {
-      expect(myApp.findMinMax([1, 2, 3, 4])).toEqual([1, 4]);
+describe("Produce the reverse order of a word: ", function() {
+  describe("Case for en empty string", function() {
+    it("should return null for empty string", function() {
+      expect(myApp.reverseString('')).toEqual(null);
     });
-
-    it('should return [4, 6] for [6, 4]', function () {
-      expect(myApp.findMinMax([6, 4])).toEqual([4, 6]);
+  });
+  describe("Case for palindromes", function() {
+    it("should return true for `anna`", function() {
+      expect(myApp.reverseString('anna')).toEqual(true);
     });
-
-      it('should return [2, 78] for [4, 66, 6, 44, 7, 78, 8, 68, 2]', function () {
-        expect(myApp.findMinMax([4, 66, 6, 44, 7, 78, 8, 68, 2])).toEqual([2, 78]);
-      });
-
+    it("should return true for `NaN`", function() {
+      expect(myApp.reverseString('NaN')).toEqual(true);
     });
-
-    describe('Return the number in the list in a new list follows `[min]` when the number is the min and max number in that list', function () {
-
-      it('should return [4] for [4, 4, 4, 4]', function () {
-        expect(myApp.findMinMax([4, 4, 4, 4])).toEqual([4]);
-      });
-
+    it("should return true for `civic`", function() {
+      expect(myApp.reverseString('civic')).toEqual(true);
     });
-    describe('falsy argument in a list', function () {
-
-      it('should return "invalid" for ["string"]', function () {
-        expect(myApp.findMinMax(['string'])).toEqual('invalid argument');
-      });
-
+  });
+  describe("Case for normal words", function() {
+    it("should return `skoob` for `books`", function() {
+      expect(myApp.reverseString('books')).toEqual('skoob');
     });
-    describe('literal argument in a list', function () {
-
-      it('should return This is not an array for 6', function () {
-        expect(myApp.findMinMax(6)).toEqual("This is not an Array");
-      });
-
+    it("should return `nomolos` for `solomon`", function() {
+      expect(myApp.reverseString('solomon')).toEqual('nomolos');
     });
-    describe('with no argument in a list', function () {
-
-      it('should return no argument for None', function () {
-        expect(myApp.findMinMax(null)).toEqual("This is not an Array");
-      });
-
+    it("should return `csim` for `misc`", function() {
+      expect(myApp.reverseString('misc')).toEqual('csim');
     });
-
+  });
 });
