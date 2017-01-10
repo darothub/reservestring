@@ -3,9 +3,9 @@ function reverseString(str){
 	if(str === ""){
 		return null;
 	}
-	var reversal = [];
+	var reversal = "";
 	for (var i = 1; i<=str.length; i++){
-		reversal.push(str[str.length-i])
+		reversal+=(str[str.length-i])
 		}
 		if (reversal === str){
 			return true
