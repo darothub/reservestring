@@ -3,13 +3,11 @@ function reverseString(str){
 	if(str === ""){
 		return null;
 	}
-	var reversal = "";
-	for (var i = str.length-1; i>=0; i--){
-		reversal+=str[i]
+	var reversal = str.split('').reverse().join('');
+	if(str === reversal){
+		return true
 	}
-	return reversal
 	
-		
 }
 
 module.exports = {
