@@ -4,13 +4,12 @@ function reverseString(str){
 		return null;
 	}
 	var reversal = "";
-	for (var i = 1; i<=str.length; i++){
-		reversal+=(str[str.length-i])
-		}
-		if (reversal === str){
-			return true
-		}
-		return reversal
+	for (var i = str.length-1; i>=0; i--){
+		reversal+=str[i]
+	}
+	return reversal
+	
+		
 }
 
 module.exports = {
